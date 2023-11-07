@@ -1,88 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Home</title>
-      <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-      <link rel="stylesheet" href="./style/home.css">
-  </head>
-  <body>
-    <main>
-      <div class="wrapper">
-        <section class="container mail-container">
-            <fieldset>
-              <div>
-                  <img src="./img/mail.svg" alt="signin with mail & password">
-              </div>
-            <div>
-              <label for="mail">Email</label> <br>
-              <input type="email" id="mail" name="mail"/>
-            </div>
-            <div>
-              <label for="password">Password</label> <br>
-              <input type="password" id="password" name="password"/>
-            </div>
-            <a href="./reset">I forgot my password</a>
-            <div class="clearfix"></div>
-            <button id="signInWithMail">Login</button>
-            <button id="signUp">Signup</button>
-          </fieldset>    
-      </section>
-      <section class="socialMedia-container"> 
-        <button id="signInWithGoogle">Login with your Google
-          <img src="./img/google.svg" width="55px" height="55px" alt="Sign in with your Google account.">
-        </button><br>
-        <button id="signInWithTwitter">Login with your Twitter
-          <img src="./img/twitter.svg" width="55px" height="55px" alt="Sign in with your Twitter account.">
-        </button><br>
-        <button id="signInWithFacebook">Login with your Facebook
-          <img src="./img/facebook.svg" width="55px" height="55px" alt="Sign in with your Facebook account.">
-        </button>
-      </section>
-      <section class="container phone-container">
-        <fieldset>
-          <div>
-                <img src="./img/phone.svg" alt="signin with your phone number">
-            </div>
-          <div>
-            <label for="phoneNumber">Phone Number</label> <br>
-            <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]"/> <br>
-          </div>
-          <div>
-            <label for="code">Code</label> <br>
-            <input type="text" id="code" name="code"/> <br>
-          </div>
-          <div id="recaptcha-container"></div>
-          <button id="signInWithPhone">Login</button>
-          <button id="getCode">Get Code</button>  
-        </fieldset>
-      </section>
-      </div>
-      <nav>
-        <input type="radio" id="method1" name="method" value="method1" checked>Sign in with your email &#38; password <br>
-        <input type="radio" id="method2" name="method" value="method2">Sign in with your social media account <br>
-        <input type="radio" id="method3" name="method" value="method3">Sign in with your phone number
-      </nav>
-      <div class="feedbackContainer success">
-        <div class="feedbackIcon"></div>
-        <p class="feedbackMessage">Signed up Successfully</p>
-      </div>
-      <div class="feedbackContainer failure">
-        <div class="feedbackIcon"></div>
-        <p class="feedbackMessage">Signing up failed</p>
-      </div>
-    </main>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="/__/firebase/6.2.4/firebase-app.js"></script>
-    <script src="/__/firebase/6.2.4/firebase-auth.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-        https://firebase.google.com/docs/web/setup#reserved-urls -->
-
-    <!-- Initialize Firebase -->
-    <script src="/__/firebase/init.js"></script>
-    <script src="./js/home.js"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Stark Industries</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000; /* 배경색 검은색으로 지정 */         
+            display: flex;
+            align-items: center;
+            justify-content: center; /* 가로와 세로 가운데 정렬 */
+            height: 100vh; /* 화면 높이 전체를 차지하도록 설정 */
+            margin: 10; /* 기본 마진 제거 */
+            position: relative; /* 부모 요소로부터 상대 위치 설정 */
+        }
+        .header {
+            position: absolute;
+            top: 48px; /* 위에서 80px 떨어진 위치 */
+            left: 48px; /* 왼쪽에서 80px 떨어진 위치 */
+            font-size: 24px; /* 원하는 크기로 설정 */
+            color: #fff; /* 글자 색상을 흰색으로 설정 */
+        }
+        .text-container {
+            padding: 20px;
+            text-align: center; /* 텍스트 가운데 정렬 */
+            background: rgba(0, 0, 0, 0.7); /* 텍스트 컨테이너에 반투명 배경 추가 */
+            color: #fff; /* 텍스트 색상 흰색으로 변경 */
+        }
+        .text {
+            font-size: 14px; /* 텍스트 크기 작게 설정 */
+            margin-bottom: 20px;
+        }
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            margin-left: 140px; /* 이미지 상단과의 간격 조절 */
+        }
+        .image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* 원 모양으로 설정 */
+            transition: transform 0.2s; /* 호버 효과 */
+        }
+        .image:hover {
+            transform: scale(1.1); /* 호버 효과 시 이미지 확대 */
+            cursor: pointer; /* 호버 시 커서 모양 변경 */
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+        }
+        .footer a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px;
+            border: 1px solid #fff;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .footer a:hover {
+            background-color: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Stark Industries</div>
+    <div class="text-container">
+        <p class="text">
+            The largest weapon company!
+        </p>
+        <p class="text">
+          
+        </p>
+        <p class="text">
+       Changing the world for a better future.
+        </p>
+    </div>
+    <div class="image-container">
+        <a href="https://eunseoseol.github.io/stark3141" target="_blank"> <!-- Edith 이미지 버튼 -->
+            <img class="image" src="asset/ironman.png" alt="Edith">
+        </a>
+    </div>
+    <div class="footer">
+        <a href="https://www.x.com" target="_blank">X</a>
+        <a href="https://www.medium.com" target="_blank">Medium</a>
+        <a href="https://www.github.com" target="_blank">GitHub</a>
+        <a href="https://www.notion.com" target="_blank">Notion</a>
+        <a href="https://www.youtube.com" target="_blank">YouTube</a>
+        <a href="https://www.pinterest.com" target="_blank">Pinterest</a>
+        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        <a href="https://www.tiktok.com" target="_blank">TikTok</a>
+        <a href="https://www.whatsapp.com" target="_blank">WhatsApp</a>
+        <a href="https://www.facebook.com" target="_blank">Facebook</a>
+        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        <a href="https://www.messenger.com" target="_blank">Messenger</a>
+    </div>
+</body>
 </html>
