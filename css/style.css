@@ -1,59 +1,64 @@
-@import url('https://fonts.googleapis.com/css?family=Sunflower:300" rel="stylesheet');
-body{
-  font-family: 'Sunflower', sans-serif;
-  font-size: 17px;
-  color: black;
-}
-.smaller-image{
-  width: 700px;
-}
-#japan-flag{
-  width: 50px;
-}
-.verticalLine {
-  border-left: 2px solid black;
-}
-.divider {
-  border-top: 1px solid black;
-  width: 1000px;
-}
-#bottom-divider{
-  width: 1230px;
-}
-.portrait-border{
-  border-color: black;
-  border-width: 2px;
-  border-style: solid;
-  border-radius: 2%;
-}
-#infobox{
-  background-color: rgb(191,191,191);
-  width: 1230px;
-  border-radius: 1%;
-  margin: 80px auto 80px auto;
-}
-.header{
-  font-size: 50px;
-  line-height: 50px;
-  text-shadow: 2px 1px black;
-}
-#title1{
-  padding-top: 40px;
-  color: #292929;
-}
-#title2{
-  font-size: 50px;
-  color: #292929;
-}
-#title3{
-  font-size: 40px;
-  color: #292929;
-}
-.quote{
-  font-size: 20px;
-}
-#wikipedia{
-  font-size: 20px;
-  padding-top: 20px;
-  padding-bottom: 30px;
-}
+ <style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+  }
+  .header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  .nav {
+    background-color: #333;
+    overflow: hidden;
+  }
+  .nav a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .nav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  .row {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  .column {
+    flex: 1;
+    padding: 10px;
+    margin-bottom: 50px; /* Added space between the columns */
+  }
+  .column img {
+    width: 320px; /* Set width */
+    height: 480px; /* Set height */
+    border-radius: 40px; /* Rounded corners */
+    margin-bottom: 50px; /* Added space below each image */
+  }
+  /* Hover effect for images */
+  .column img:hover {
+    opacity: 0.8; /* Example effect: slightly transparent on hover */
+  }
+  /* Hover effect for all clickable elements */
+  a:hover, .footer:hover {
+    background-color: #555; /* Darkens the background */
+    color: #fff; /* Change text color to white */
+  }
+  .footer {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+</style>
