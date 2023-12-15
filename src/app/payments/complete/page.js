@@ -1,5 +1,5 @@
 export default async function Page({ searchParams }) {
-  const secretKey = process.env.TOSS_SECRET_KEY || "";
+  const secretKey = "test_sk_jZ61JOxRQVEgBEdMnag8W0X9bAqw";
   const basicToken = Buffer.from(`${secretKey}:`, `utf-8`).toString("base64");
 
   const url = `https://api.tosspayments.com/v1/payments/orders/${searchParams.orderId}`;
