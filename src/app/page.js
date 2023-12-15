@@ -4,7 +4,7 @@ import { loadTossPayments } from "@tosspayments/payment-sdk";
 export default function Page() {
   const handleClick = async () => {
     const tossPayments = await loadTossPayments(
-      process.env.NEXT_PUBLIC_TOSS_CLIENT_KEY
+      "test_ck_OAQ92ymxN34j1YX5p0ArajRKXvdk"
     );
 
     await tossPayments.requestPayment("카드", {
