@@ -16,8 +16,6 @@ export default async function Page({ searchParams }) {
       <h1>결제가 완료되었습니다</h1>
       <ul>
         <li>
-          결제승인날짜{" "}
-          {Intl.DateTimeFormat().format(new Date(payments.approvedAt))}
         </li>
       </ul>
     </div>
