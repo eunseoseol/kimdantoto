@@ -1,23 +1,136 @@
 "use client";
-import { loadTossPayments } from "@tosspayments/payment-sdk";
+
+
+import React, { useState, useEffect } from "react";
 
 export default function Page() {
-  const handleClick = async () => {
-    const tossPayments = await loadTossPayments(
-      "test_ck_OAQ92ymxN34j1YX5p0ArajRKXvdk"
-    );
+  const [isMobile, setIsMobile] = useState(false);
 
-    await tossPayments.requestPayment("카드", {
-      amount: 5000,
-      orderId: Math.random().toString(36).slice(2),
-      orderName: "맥북",
-      successUrl: `${window.location.origin}/api/payments`,
-      failUrl: `${window.location.origin}/api/payments/fail`,
-    });
+  const hoverStyle = {
+    maxWidth: '150px',
+    marginBottom: '20px',
+    transition: 'transform 0.3s ease-in-out'
   };
+  const mobilehoverStyle = {
+    maxWidth: '150px',
+    marginBottom: '0px',
+    transition: 'transform 0.3s ease-in-out'
+  };
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // 768px 미만을 모바일로 간주합니다.
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+ 
+
+  // 이곳에 다른 useEffect 훅들 및 로직 추가...
+
+  if (isMobile) {
+    return (
+      <div style={{ position: 'relative', width: '100vw', height: '100vh' }}>
+  
+      <video autoPlay loop muted playsInline style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', objectFit: 'cover', zIndex: -1 }}>
+  
+      <source src="/background.mp4" type="video/mp4" />
+    </video>
+  
+  <div style={{ position: 'relative', zIndex: 1, width: '100%', paddingTop: '20px', paddingBottom: '100px', height: 'calc(100vh - 20px)',  display: 'flex', flexDirection: 'column', alignItems: 'flex-start', alignItems: 'center' }}>
+  
+      
+            <main className="p-4" style={{ height: '100vh' }}>
+  
+          {/* 사용자가 로그인되어 있으면 Welcome 메시지를 표시하고, 그렇지 않으면 Home Page를 표시합니다. */}
+          <div style={{ position: 'relative', zIndex: 1, paddingBottom: '40px', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',marginTop: '-50px' // Move the whole block up by 50px
+  }}>
+  
+  <a   href="/Stark Industries.zip"
+               onMouseOver={(e) => e.currentTarget.firstChild.style.transform = 'scale(0.55)'}
+               onMouseOut={(e) => e.currentTarget.firstChild.style.transform = 'scale(0.5)'}
+            >
+              <img src="/book.png" alt="Book" style={mobilehoverStyle} />
+            </a>
+  
+            <h1 style={{ fontSize: '16px', fontWeight: 'bold', color: 'white' }}>
+             Stark Industries
+            </h1>
+            <h1 style={{ fontSize: '16px', fontWeight: 'bold', color: 'white' }}>
+            Chaging the world for a better future.
+
+            </h1>
+           
+          {/* book1.png on the left */}
+         
+        
+           
+  
+          
+  
+          
+  
+        </div>
+       
+        </main>
+       
+      </div>
+  
+      </div>
+  
+    );
+  }
+
   return (
-    <div>
-      <button onClick={handleClick}>맥북 5000원</button>
+    <div style={{ position: 'relative', width: '100vw', height: '100vh' }}>
+
+    <video autoPlay loop muted playsInline style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', objectFit: 'cover', zIndex: -1 }}>
+
+    <source src="/background.mp4" type="video/mp4" />
+  </video>
+
+<div style={{ position: 'relative', zIndex: 1, width: '100%', paddingTop: '20px', paddingBottom: '100px', height: 'calc(100vh - 20px)', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', alignItems: 'center' }}>
+
+    
+          <main className="p-4" style={{ height: '100vh' }}>
+
+        {/* 사용자가 로그인되어 있으면 Welcome 메시지를 표시하고, 그렇지 않으면 Home Page를 표시합니다. */}
+        <div style={{ position: 'relative', zIndex: 1, paddingBottom: '40px', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',marginTop: '-50px' // Move the whole block up by 50px
+}}>
+
+<a   href="/Stark Industries.zip"
+             onMouseOver={(e) => e.currentTarget.firstChild.style.transform = 'scale(1.1)'}
+             onMouseOut={(e) => e.currentTarget.firstChild.style.transform = 'scale(1)'}
+          >
+            <img src="/book.png" alt="Book" style={hoverStyle} />
+          </a>
+
+          <h1 style={{ fontSize: '48px', fontWeight: 'bold', color: 'white' }}>
+            Stark Industries
+          </h1>
+          <h1 style={{ fontSize: '48px', fontWeight: 'bold', color: 'white' }}>
+          Chaging the world for a better future.
+        
+          </h1>
+          <div style={{ paddingBottom: '40px' }}>
+      
+
+          </div>
+
+        
+
+        
+
+      </div>
+     
+      </main>
+     
     </div>
+
+    </div>
+
   );
 }
+
