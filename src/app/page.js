@@ -9,12 +9,12 @@ export default function Page() {
   const hoverStyle = {
     maxWidth: '150px',
     marginBottom: '20px',
-    transition: 'transform 0.3s ease-in-out'
   };
+ 
+
   const mobilehoverStyle = {
-    maxWidth: '150px',
-    marginBottom: '0px',
-    transition: 'transform 0.3s ease-in-out'
+    maxWidth: '80px',
+    marginBottom: '10px',
   };
   useEffect(() => {
     const handleResize = () => {
@@ -27,7 +27,7 @@ export default function Page() {
   }, []);
 
  
-
+//https://apps.apple.com/us/app/edith-space-assistant/id6450296741
   // 이곳에 다른 useEffect 훅들 및 로직 추가...
 
   if (isMobile) {
@@ -48,18 +48,16 @@ export default function Page() {
           <div style={{ position: 'relative', zIndex: 1, paddingBottom: '40px', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',marginTop: '-50px' // Move the whole block up by 50px
   }}>
   
-  <a   href="/Stark Industries.zip"
-               onMouseOver={(e) => e.currentTarget.firstChild.style.transform = 'scale(0.55)'}
-               onMouseOut={(e) => e.currentTarget.firstChild.style.transform = 'scale(0.5)'}
-            >
+  <a href="/Stark Industries.zip" download>
+
               <img src="/book.png" alt="Book" style={mobilehoverStyle} />
             </a>
   
             <h1 style={{ fontSize: '16px', fontWeight: 'bold', color: 'white' }}>
-             Stark Industries
+          Stark Industries
             </h1>
             <h1 style={{ fontSize: '16px', fontWeight: 'bold', color: 'white' }}>
-            Chaging the world for a better future.
+         Changing the world for a better future
 
             </h1>
            
@@ -100,18 +98,16 @@ export default function Page() {
         <div style={{ position: 'relative', zIndex: 1, paddingBottom: '40px', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',marginTop: '-50px' // Move the whole block up by 50px
 }}>
 
-<a   href="/Stark Industries.zip"
-             onMouseOver={(e) => e.currentTarget.firstChild.style.transform = 'scale(1.1)'}
-             onMouseOut={(e) => e.currentTarget.firstChild.style.transform = 'scale(1)'}
-          >
+  <a href="/Stark Industries.zip" download>
+
             <img src="/book.png" alt="Book" style={hoverStyle} />
           </a>
 
           <h1 style={{ fontSize: '48px', fontWeight: 'bold', color: 'white' }}>
-            Stark Industries
+         Stark Industries
           </h1>
           <h1 style={{ fontSize: '48px', fontWeight: 'bold', color: 'white' }}>
-          Chaging the world for a better future.
+       Changing the world for a better future
         
           </h1>
           <div style={{ paddingBottom: '40px' }}>
