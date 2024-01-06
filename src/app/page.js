@@ -48,7 +48,7 @@ export default function Page() {
           <div style={{ position: 'relative', zIndex: 1, paddingBottom: '40px', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',marginTop: '-50px' // Move the whole block up by 50px
   }}>
   
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZ8Ve-c_DI-oMe6RIF3eitqzPwtIXVFfPMtD2prABAif_1jA/viewform?usp=sf_link">
+  <a href="http://pf.kakao.com/_uMTfG/chat">
 
               <img src="/book.png" alt="Book" style={mobilehoverStyle} />
             </a>
@@ -98,7 +98,7 @@ export default function Page() {
         <div style={{ position: 'relative', zIndex: 1, paddingBottom: '40px', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',marginTop: '-50px' // Move the whole block up by 50px
 }}>
 
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZ8Ve-c_DI-oMe6RIF3eitqzPwtIXVFfPMtD2prABAif_1jA/viewform?usp=sf_link" download>
+  <a href="http://pf.kakao.com/_uMTfG/chat" download>
 
             <img src="/book.png" alt="Book" style={hoverStyle} />
           </a>
