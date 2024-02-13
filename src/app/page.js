@@ -53,10 +53,16 @@ export default function Page() {
             <h1 style={{ fontSize: isMobile ? '16px' : '48px', fontWeight: 'bold', color: 'white' }}>
             Changing the world for a better future.
             </h1>
-              <footer style={{ textAlign: 'center', marginTop: '0px', padding: '10px', fontSize: '14px', color: 'white' }}>
-<p>Copyright ⓒ Stark Industries. All Rights Reserved</p>
-<p>Eunseo Seol | 39–26, Pungyeong-ro 170beon-gil, Gwangsan-gu, Gwangju, Republic of Korea | 248–27–01947 </p>
+           <footer style={{ textAlign: 'center', marginTop: '0px', padding: '10px', fontSize: '14px', color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+  <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    스타크인더스트리즈 설은서 | 광주광역시 광산구 풍영로 170번길 39-26 504동 11층 1104호 (장덕동 성덕마을 대방노블랜드 5차) | 사업자등록번호 : 248–27–01947
+    <a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2482701947" target="_blank" style={{ marginLeft: '10px', color: 'white', textDecoration: 'underline' }}>
+      사업자 정보 확인
+    </a>
+  </p>
+  <p>Copyright ⓒ Stark Industries. All Rights Reserved</p>
 </footer>
+
           </div>
 
 
